@@ -35,21 +35,45 @@ Beispiel Ergebnis:
 """
 
 # TODO: Erstelle hier die Klasse Song
+class song:
+    def __init__(self, titel, interpreten):
+        self.titel = titel
+        self.interpreten = interpreten
+        print(f"Neuer Song mit Titel {self.titel} & Interpreten {self.interpreten} wurde erstellt.")
 
+    def zeige_info(self):
+        print(f"Neuer Song mit Titel {self.titel} & Interpreten {self.interpreten} wurde erstellt.")
+    
+    def interpret_hinzufuegen(self, neuer_interpret):
+        self.interpreten.append(neuer_interpret)
+        print(f"{neuer_interpret} wurde hinzugefügt")
+        print(f"Allke Interpreten: {self.interpreten}")
 
+    def anzahl_interpreten(self):
+        return len(self.interpreten)
+    
+    def play_song(self):
+        print(f"Song {self.titel} wird gespielt")
+       
 # TODO: Erstelle einen Song mit einem Titel und 2 Interpreten deiner Wahl
-
+song_1 = song(titel="Die with a smile", interpreten= ["Bruno Mars", "Lady Gaga"])
+song_2 = song(titel = "Zombie", interpreten= ["Cranberries"])
+song_3 = song(titel = "My Only Angel", interpreten= ["Yungblud", "Aerosmith"])
 
 # TODO: Zeige die Song-Info
-
+song_1.zeige_info()
 
 # TODO: Füge einen weiteren Interpreten hinzu
+song_2.interpret_hinzufuegen("DJ Lenzi")
+song_1.interpret_hinzufuegen("Katja")
 
 
 # TODO: Zeige die Anzahl der Interpreten
-
+number_artists = song_1.anzahl_interpreten()
+print(number_artists)
 
 # TODO: Zeige die Song-Info erneut
-
+song_1.zeige_info()
 
 # TODO: Spiele den Song ab
+song_1.play_song()
